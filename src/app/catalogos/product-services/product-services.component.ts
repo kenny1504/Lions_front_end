@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ProductAndServiceService } from '../../services/product-and-service.service';
+import {LanguageApp} from "../../theme/shared/LanguageApp";
 
 @Component({
   selector: 'app-product-services',
@@ -20,7 +20,8 @@ export class ProductServicesComponent implements OnInit{
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
-      processing: true
+      processing: true,
+      language: LanguageApp.spanish_datatables
     };
 
     this.productAndServiceService.GetProductAndServices()
