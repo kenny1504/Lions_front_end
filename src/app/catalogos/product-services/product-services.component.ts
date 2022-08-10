@@ -10,11 +10,12 @@ import { HttpClient } from '@angular/common/http';
 export class ProductServicesComponent implements OnInit{
   title = 'datatables';
   dtOptions: DataTables.Settings = {};
-  public posts: any;
-
+  posts:any;
+  isDataReady:any;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
@@ -24,6 +25,7 @@ export class ProductServicesComponent implements OnInit{
     this.http.get('http://jsonplaceholder.typicode.com/posts')
       .subscribe(posts => {
         this.posts = posts;
+        this.isDataReady=true;
       });
 
   }

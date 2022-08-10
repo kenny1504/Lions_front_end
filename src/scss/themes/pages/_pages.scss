@@ -1,4 +1,4 @@
-/* ===================== to do page start ======================================= */
+/* ===================== to do theme start ======================================= */
 
 #task-container {
     ul {
@@ -35,7 +35,7 @@
         transition: all ease-in 0.3s;
 
         &:before {
-            background: url("src/assets/images/complete.png") no-repeat;
+            background: url("../../../assets/images/complete.png") no-repeat;
             position: absolute;
             top: 5px;
             right: 5px;
@@ -207,8 +207,8 @@ new-task {
         display: none;
     }
 }
-/* ===================== to do page end =========================================*/
-/* ===================== Gallery-masonry page start ============================= */
+/* ===================== to do theme end =========================================*/
+/* ===================== Gallery-masonry theme start ============================= */
 
 .gallery-masonry {
     .card-columns {
@@ -243,8 +243,8 @@ new-task {
         color: $primary-color;
     }
 }
-/* ===================== Gallery-masonry page end ============================= */
-/* ===================== Task-list page start ============================= */
+/* ===================== Gallery-masonry theme end ============================= */
+/* ===================== Task-list theme start ============================= */
 
 .task-data {
     img {
@@ -391,8 +391,8 @@ new-task {
         box-shadow: none;
     }
 }
-/* ===================== Task-list page end ===================================== */
-/* ===================== Invoice page start ===================================== */
+/* ===================== Task-list theme end ===================================== */
+/* ===================== Invoice theme start ===================================== */
 
 .invoice-contact {
     display: flex;
@@ -473,9 +473,9 @@ new-task {
         display: inline-block;
     }
 }
-/* ===================== Invoice page end ======================================= */
+/* ===================== Invoice theme end ======================================= */
 /* ==============================================================
-                     email-page  Start
+                     email-theme  Start
 ====================================================== */
 .email-card {
     .tab-content {
@@ -653,7 +653,7 @@ new-task {
         padding: 0 !important;
     }
 }
-/* ==================  email-page  End  =================== */
+/* ==================  email-theme  End  =================== */
 /* ==============================================================
                      image-cropper  Start
 ====================================================== */
