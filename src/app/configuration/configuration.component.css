@@ -1,0 +1,10 @@
+.menu-styler .nav-pills {
+  margin-bottom: 8px;
+  box-shadow: none;
+}
+body.gradient-dark .menu-styler .tab-content {
+  background: rgba(4, 169, 245, 0.03);
+}
+body.gradient-dark .menu-styler h1, body.gradient-dark .menu-styler h2, body.gradient-dark .menu-styler h3, body.gradient-dark .menu-styler h4, body.gradient-dark .menu-styler h5, body.gradient-dark .menu-styler p, body.gradient-dark .menu-styler h6 {
+  color: #222;
+}
