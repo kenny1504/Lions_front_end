@@ -2,22 +2,26 @@
 <div class="row">
   <!-- [ basic-table ] start -->
   <div class="col-md-10 offset-1">
-    <app-card cardTitle="Basic Table" blockClass="table-border-style">
+    <app-card cardTitle="Productos y/o Servicios" blockClass="table-border-style">
       <div class="table-responsive">
         <div *ngIf="isDataReady === true">
           <table datatable [dtOptions]="dtOptions" class="row-border hover">
             <thead>
             <tr>
               <th>ID</th>
-              <th>Title</th>
-              <th>Body</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Existencia</th>
+              <th>Tipo</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let post of posts">
-              <td>{{ post.id }}</td>
-              <td>{{ post.title }}</td>
-              <td>{{ post.body }}</td>
+            <tr *ngFor="let product of productService">
+              <td>{{ product._id }}</td>
+              <td>{{ product.nombre }}</td>
+              <td>{{ product.precio }}</td>
+              <td>{{ product.existencia }}</td>
+              <td>{{ product.tipo }}</td>
             </tr>
             </tbody>
           </table>

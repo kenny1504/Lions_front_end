@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ProductAndServiceService } from '../../services/product-and-service.service';
 
 @Component({
   selector: 'app-product-services',
@@ -10,9 +11,9 @@ import { HttpClient } from '@angular/common/http';
 export class ProductServicesComponent implements OnInit{
   title = 'datatables';
   dtOptions: DataTables.Settings = {};
-  posts:any;
+  productService:any;
   isDataReady:any;
-  constructor(private http: HttpClient) { }
+  constructor(private productAndServiceService: ProductAndServiceService) { }
 
   ngOnInit(): void {
 
@@ -22,9 +23,9 @@ export class ProductServicesComponent implements OnInit{
       processing: true
     };
 
-    this.http.get('http://jsonplaceholder.typicode.com/posts')
-      .subscribe(posts => {
-        this.posts = posts;
+    this.productAndServiceService.GetProductAndServices()
+      .subscribe(productService => {
+        this.productService = productService;
         this.isDataReady=true;
       });
 
