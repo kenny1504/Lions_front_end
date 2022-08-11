@@ -21,7 +21,8 @@
               <td>{{ product.nombre }}</td>
               <td>{{ product.precio }}</td>
               <td>{{ product.existencia }}</td>
-              <td>{{ product.tipo }}</td>
+              <td *ngIf="product.tipo==1" [ngClass]="'bg-success'">Producto</td>
+              <td *ngIf="product.tipo==2" [ngClass]="'bg-warning'">Servicio</td>
             </tr>
             </tbody>
           </table>

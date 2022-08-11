@@ -25,6 +25,7 @@ import { NgbButtonsModule, NgbDropdownModule, NgbTooltipModule } from '@ng-boots
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductServicesComponent } from './catalogos/product-services/product-services.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ProductServicesComponent } from './catalogos/product-services/product-s
     NavSearchComponent,
     NavRightComponent,
     BreadcrumbComponent,
-    ProductServicesComponent
+    ProductServicesComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,
@@ -57,6 +59,6 @@ import { ProductServicesComponent } from './catalogos/product-services/product-s
         HttpClientModule
     ],
   providers: [NavigationItem],
-  bootstrap: [AdminComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
