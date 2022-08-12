@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ClickOutsideModule } from 'ng-click-outside';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -56,7 +57,8 @@ import { LoginComponent } from './login/login.component';
         NgbTooltipModule,
         NgbButtonsModule,
         DataTablesModule,
-        HttpClientModule
+        HttpClientModule,
+        MatSnackBarModule
     ],
   providers: [NavigationItem],
   bootstrap: [AppComponent]

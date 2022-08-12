@@ -4,6 +4,12 @@
   }
 }
 
+.z-index{
+  z-index: 1029!important;
+  position: fixed!important;
+  top: -1px!important;
+  margin-left: 40%!important;
+}
 .progressbar-stack .progress,
 .progressbar-stack .progress-bar {
   margin: 0 1px;

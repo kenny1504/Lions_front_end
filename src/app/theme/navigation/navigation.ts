@@ -27,8 +27,8 @@ export interface Navigation extends NavigationItem {
 
 const NavigationItems = [
   {
-    id: 'catalogo',
-    title: 'catalogo',
+    id: 'Catalogo',
+    title: 'Catalogo',
     type: 'group',
     icon: 'feather icon-monitor',
     children: [
