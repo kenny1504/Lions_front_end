@@ -9,7 +9,6 @@ import {LanguageApp} from "../../theme/shared/LanguageApp";
 })
 
 export class ProductServicesComponent implements OnInit{
-  title = 'datatables';
   dtOptions: DataTables.Settings = {};
   productService:any;
   isDataReady:any;

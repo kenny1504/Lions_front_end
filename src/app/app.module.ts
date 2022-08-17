@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbButtonsModule, NgbDropdownModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { DataTablesModule } from 'angular-datatables';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,19 +21,13 @@ import { NavGroupComponent } from './theme/nav-content/nav-group/nav-group.compo
 import { NavCollapseComponent } from './theme/nav-content/nav-collapse/nav-collapse.component';
 import { NavItemComponent } from './theme/nav-content/nav-item/nav-item.component';
 import { CardComponent } from './theme/shared/card/card.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavLeftComponent } from './theme/nav-bar/nav-left/nav-left.component';
 import { NavSearchComponent } from './theme/nav-search/nav-search.component';
 import { NavRightComponent } from './theme/nav-bar/nav-right/nav-right.component';
 import { BreadcrumbComponent } from './theme/shared/breadcrumb/breadcrumb.component';
-
-import { NavigationItem } from './theme/navigation/navigation';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbButtonsModule, NgbDropdownModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-import { DataTablesModule } from 'angular-datatables';
-import { HttpClientModule } from '@angular/common/http';
-import { ProductServicesComponent } from './catalogos/product-services/product-services.component';
 import { LoginComponent } from './login/login.component';
+import { ProductServicesComponent } from './catalogos/product-services/product-services.component';
+import { NavigationItem } from './theme/navigation/navigation';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { LoginComponent } from './login/login.component';
     NavRightComponent,
     BreadcrumbComponent,
     ProductServicesComponent,
-    LoginComponent
+    LoginComponent,
+
   ],
     imports: [
         BrowserModule,
@@ -58,9 +60,10 @@ import { LoginComponent } from './login/login.component';
         NgbButtonsModule,
         DataTablesModule,
         HttpClientModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        FormsModule
     ],
-  providers: [NavigationItem],
+  providers: [NavigationItem,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

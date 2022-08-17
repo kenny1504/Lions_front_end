@@ -1,42 +1,28 @@
-import {Injectable, Injector} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {catchError, throwError} from "rxjs";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {catchError} from "rxjs";
 import {product} from "../models/product";
-import {MatSnackBar} from "@angular/material/snack-bar";
-
+import {ErrorApp} from "./ErrorApp";
+import {UserService} from "./user.service";
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductAndServiceService {
 
-  constructor(private http: HttpClient,public snackbar: MatSnackBar) {}
+  constructor(private http: HttpClient,public errorApp: ErrorApp,public userService: UserService) {}
 
   GetProductAndServices () {
 
+    const header = new HttpHeaders().set('x-access-token',this.userService.getToken()); // may be localStorage/sessionStorage
+    const headers = { headers: header };
+    console.log(headers)
     return this.http
-      .get<product[]>('http://localhost:3000/api/productServices')
+      .get<product[]>('http://localhost:3000/api/productServices',headers)
       .pipe(
-        catchError(this.handleError.bind(this))
+        catchError((res) => this.errorApp.handleError(res))
       );
-
-  }
-
-  private handleError(error: HttpErrorResponse) {
-
-    if (error.status === 0) {
-      console.error('An error occurred:', error.error);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, body was: `, error.error);
-    }
-
-    this.snackbar.open(error.error.toString(), 'Ok',{
-         duration: 6000,
-         panelClass: ['bg-danger', 'z-index']
-    });
-
-    return throwError(error);
 
   }
 

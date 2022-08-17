@@ -2,6 +2,8 @@ import {Component, DoCheck, OnInit} from '@angular/core';
 import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 import {animate, style, transition, trigger} from '@angular/animations';
 import { GradientConfig } from '../../../app-config';
+import { CookieService } from "ngx-cookie-service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav-right',
@@ -35,13 +37,20 @@ export class NavRightComponent implements OnInit, DoCheck {
   public friendId?: boolean;
   public gradientConfig: any;
 
-  constructor() {
+  constructor(private cookies: CookieService, public router: Router) {
     this.visibleUserList = false;
     this.chatMessage = false;
     this.gradientConfig = GradientConfig.config;
   }
 
   ngOnInit() { }
+
+  logout ()  {
+    this.cookies.delete("token");
+    this.router.navigateByUrl('/');
+  }
+
+
 
   onChatToggle(friendID: boolean) {
     this.friendId = friendID;
